@@ -1,0 +1,237 @@
+/* pages.css —— 各页面专属布局 + 响应式 */
+
+/* ========== 首页 ========== */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 48px 20px;
+}
+.home .hero { max-width: 560px; }
+.home h1 {
+  font-size: 40px;
+  margin: 18px 0 10px;
+  letter-spacing: 0.02em;
+}
+.home .subtitle {
+  font-size: 17px;
+  color: var(--ink-soft);
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+}
+.home .intro {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 30px;
+}
+.home .type-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.home .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.home .footnote { margin-top: 28px; font-size: 13px; color: var(--ink-faint); }
+
+/* ========== 答题页 ========== */
+.test-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+.test-header .meta-row {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.progress-track {
+  max-width: var(--maxw);
+  margin: 8px auto 0;
+  height: 6px;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 999px;
+  transition: width .3s ease;
+}
+.save-state { font-size: 12px; color: var(--ink-faint); }
+
+.question-block { margin-top: 10px; }
+.module-label { font-size: 12.5px; color: var(--gold); font-weight: 600; letter-spacing: .08em; }
+.question-text {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 10px 0 22px;
+  font-weight: 600;
+}
+.question-hint { font-size: 13px; color: var(--ink-faint); margin-bottom: 18px; }
+
+/* 选项 */
+.options { display: flex; flex-direction: column; gap: 12px; }
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  cursor: pointer;
+  transition: border-color .12s, background .12s, box-shadow .12s;
+  text-align: left;
+  font: inherit;
+  width: 100%;
+}
+.option:hover { border-color: var(--gold-soft); background: var(--bg-soft); }
+.option.selected {
+  border-color: var(--gold);
+  background: #fdf6ea;
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+.option .opt-key {
+  flex: 0 0 auto;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--ink-soft);
+}
+.option.selected .opt-key { background: var(--gold); color: #fff; border-color: var(--gold); }
+.option .opt-text { flex: 1; font-size: 15.5px; line-height: 1.5; }
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* ========== 结果页 ========== */
+.result-head { text-align: center; margin-bottom: 28px; }
+
+/* 主类型卡片 */
+.main-type-card {
+  text-align: center;
+  padding: 34px 24px;
+  position: relative;
+}
+.main-type-card .your-type { font-size: 12px; letter-spacing: .28em; color: var(--gold); }
+.main-type-card .type-badge {
+  display: inline-block;
+  margin: 14px auto 6px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+.main-type-card .type-name-cn { font-size: 38px; margin: 6px 0 2px; }
+.main-type-card .type-name-en { font-size: 13px; letter-spacing: .3em; color: var(--ink-faint); }
+.main-type-card .type-keywords {
+  display: flex; gap: 10px; justify-content: center; margin: 16px 0;
+  font-size: 13px; color: var(--ink-soft);
+}
+.main-type-card .type-keywords span::before { content: '· '; color: var(--gold); }
+.main-type-card .type-desc { max-width: 520px; margin: 0 auto; color: var(--ink-soft); }
+.main-type-card .type-score {
+  display: inline-block; margin-top: 14px; font-size: 13px; color: var(--gold); font-weight: 600;
+}
+.main-type-card .divider-fine {
+  width: 60px; height: 1px; background: var(--border); margin: 20px auto 0;
+}
+
+.subtype-note { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
+
+/* 需求排序条 */
+.need-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+.need-row .need-name { flex: 0 0 92px; font-size: 14px; font-weight: 600; }
+.need-row .need-track { flex: 1; height: 8px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; }
+.need-row .need-fill { height: 100%; background: var(--gold-soft); border-radius: 999px; }
+
+/* 15 维降序排行条 */
+.rank-item { margin: 14px 0; }
+.rank-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.rank-head .rank-no {
+  flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--bg-soft); color: var(--ink-soft);
+  font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center;
+}
+.rank-head .rank-name { flex: 1; font-size: 15px; font-weight: 600; }
+.rank-head .rank-score { font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+.rank-desc { margin: 6px 0 0; font-size: 12.5px; color: var(--ink-faint); line-height: 1.55; }
+
+/* 反差块 */
+.contrast-item {
+  padding: 14px 18px;
+  border-left: 3px solid var(--gold);
+  background: var(--bg-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 12px;
+}
+.contrast-item .think { color: var(--ink-soft); }
+.contrast-item .actual { font-weight: 600; margin-top: 4px; }
+
+/* 匹配块 */
+.match-item { margin-bottom: 16px; }
+.match-item h3 { font-size: 15px; margin-bottom: 4px; }
+.match-tag { font-size: 12px; padding: 2px 10px; border-radius: 999px; background: var(--bg-soft); color: var(--ink-soft); }
+
+/* 页脚 Made By Reruna */
+.site-footer {
+  text-align: center;
+  padding: 28px 20px 36px;
+  font-size: 13px;
+  letter-spacing: .04em;
+}
+.site-footer a {
+  color: var(--ink-faint);
+  text-decoration: none;
+}
+.site-footer a:hover { color: var(--gold); }
+
+/* ========== 图鉴页 ========== */
+.codex-section { margin-bottom: 36px; }
+.codex-grid { display: grid; gap: 16px; }
+.codex-entry {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  background: var(--card);
+}
+.codex-entry h3 { font-size: 17px; display: flex; align-items: center; gap: 8px; }
+.codex-entry .en { font-size: 11px; letter-spacing: .2em; color: var(--ink-faint); }
+.codex-entry .kw { font-size: 13px; color: var(--gold); margin: 4px 0 8px; }
+.codex-entry dl { margin: 0; }
+.codex-entry dt { font-size: 12.5px; color: var(--ink-faint); font-weight: 600; margin-top: 10px; }
+.codex-entry dd { margin: 2px 0 0; font-size: 14px; }
+.color-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: var(--maxw); margin: 0 auto; padding: 16px 20px;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 480px) {
+  .home h1 { font-size: 32px; }
+  .main-type-card .type-name-cn { font-size: 30px; }
+  .question-text { font-size: 18px; }
+  .wrap { padding: 24px 16px 56px; }
+  .bar-row { grid-template-columns: 60px 1fr 40px; gap: 8px; }
+  .need-row .need-name { flex-basis: 76px; font-size: 13px; }
+}

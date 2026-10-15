@@ -1,0 +1,8 @@
+# 开发/临时文件
+*.jpg
+恋爱隐藏属性测试_Claude开发提示词.md
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+node_modules/

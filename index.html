@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>十五维恋爱属性测试 · 你是哪一系？</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <main class="home">
+    <div class="hero">
+      <div class="diamond"></div>
+      <p class="eyebrow" style="margin-top:18px;">属性图鉴</p>
+      <h1>你是哪一系？</h1>
+      <p class="subtitle">十五维 · 恋爱隐藏属性</p>
+      <p class="intro">十五个灵魂频率，一张雷达图，测出你最真实的恋爱属性。</p>
+
+      <div class="type-tags">
+        <span class="type-tag" style="color:var(--t-natural)">天然</span>
+        <span class="type-tag" style="color:var(--t-qingfu)">轻浮</span>
+        <span class="type-tag" style="color:var(--t-dianbo)">电波</span>
+        <span class="type-tag" style="color:var(--t-dilei)">地雷</span>
+        <span class="type-tag" style="color:var(--t-zhongli)">重力</span>
+        <span class="type-tag muted">…等 15 系</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="test.html" id="start-btn">开始测试</a>
+        <a class="btn btn-ghost" href="codex.html">属性图鉴</a>
+      </div>
+      <div id="resume-row" class="cta-row hidden" style="margin-top:14px;">
+        <a class="btn btn-ghost" href="test.html?resume=1" id="resume-btn">继续上次（已答 <span id="resume-count">0</span> 题）</a>
+      </div>
+      <div class="cta-row" style="margin-top:14px;">
+        <a class="btn btn-ghost" href="author.html">和作者扩列</a>
+      </div>
+
+      <p class="footnote">约 10–15 分钟 · 仅供娱乐与自我探索</p>
+
+      <p class="disclaimer" style="max-width:520px;margin:20px auto 0;text-align:left;">
+        说明：本测试的 15 个「系」源自日系 ACGN 角色属性与 J-fashion 亚文化，并参考了小红书等中文社区的流行用法。
+        它是<strong>网络娱乐与自我探索</strong>工具，<strong>不是</strong>经心理测量学验证的人格量表，
+        <strong>不能</strong>用于心理诊断、也不能预测恋爱成功率。文中对病娇、地雷、暴娇等的"极端面"描述，
+        仅为刻画人格原型的性格谱系，与现实中的监控、胁迫、自伤或伤害行为是两回事——真实关系里，占有不等于爱，
+        任何让人感到被困或被伤害的行为都应被认真对待、必要时寻求现实支持。结果是「本测试内部的相对倾向」，
+        照见的是倾向而非给你下定义。
+      </p>
+    </div>
+    <footer class="site-footer"><a href="author.html">Made By Reruna</a></footer>
+  </main>
+
+  <script type="module">
+    import { loadProgress } from './js/core/storage.js';
+    const p = loadProgress();
+    if (p && Object.keys(p.answers).length > 0) {
+      document.getElementById('resume-row').classList.remove('hidden');
+      document.getElementById('resume-count').textContent = Object.keys(p.answers).length;
+      document.getElementById('start-btn').textContent = '重新开始';
+      document.getElementById('start-btn').href = 'test.html?restart=1';
+    }
+  </script>
+</body>
+</html>

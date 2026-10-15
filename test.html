@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>答题中 · 恋爱隐藏属性测试</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <header class="test-header">
+    <div class="meta-row">
+      <span id="module-label" class="module-label">模块</span>
+      <span id="counter">0 / 0</span>
+      <span id="save-state" class="save-state">已保存</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="question-block" id="question-block" aria-live="polite">
+      <!-- 由 JS 动态渲染 -->
+    </section>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost" id="prev-btn">上一题</button>
+      <button class="btn btn-primary" id="next-btn">下一题</button>
+    </div>
+    <p class="faint center" style="margin-top:18px;">
+      选择后自动保存，可随时上一题修改。没有恋爱经历也没关系，按最接近的假设情境作答即可。<br><a href="index.html">返回首页</a>
+    </p>
+  </main>
+  <footer class="site-footer"><a href="author.html">Made By Reruna</a></footer>
+
+  <script type="module" src="js/pages/test.js"></script>
+</body>
+</html>
